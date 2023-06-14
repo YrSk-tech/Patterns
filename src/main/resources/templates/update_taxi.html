@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Taxi</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Update Taxi</h2>
+
+    <form action="#" th:action="@{/saveTaxi}" th:object="${taxi}" method="POST">
+
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{id}" />
+
+        <label for="name">Name</label>
+        <input type="text" th:field="*{name}" id="name" class="form-control mb-4 col-4">
+
+        <label for="carNumber">CarNumber</label>
+        <input type="text" th:field="*{carNumber}" id="carNumber" class="form-control mb-4 col-4">
+
+        <label for="payments">payments</label>
+        <input type="text" th:field="*{payments}" id="payments" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Update taxi</button>
+    </form>
+
+    <hr>
+
+    <a th:href = "@{/taxi}"> Back to taxis</a>
+</div>
+</body>
+</html>

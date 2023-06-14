@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>taxi</title>
+	<link rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+		  crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+	<h2>Create taxi</h2>
+
+	<form action="#" th:action="@{/saveTaxi}" th:object="${taxi}" method="POST">
+		<input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4">
+		<input type="text" th:field="*{carNumber}" placeholder="carNumber" class="form-control mb-4 col-4">
+		<input type="text" th:field="*{payments}" placeholder="Payments" class="form-control mb-4 col-4">
+		<button type="submit" class="btn btn-info col-2">Save taxi</button>
+	</form>
+
+	<hr>
+
+	<a th:href = "@{/taxi}">Back to Taxis</a>
+</div>
+</body>
+</html>
